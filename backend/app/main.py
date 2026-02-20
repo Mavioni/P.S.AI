@@ -7,13 +7,15 @@ from __future__ import annotations
 
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.routes import dialogue, health, personas
+from app.api.websocket.handler import WebSocketHandler
 from app.core.config import settings
 from app.services.database import Database
 from app.services.dialogue_engine import DialogueEngine
+from app.services.graph_manager import KnowledgeGraphManager
 from app.services.ollama_client import OllamaClient
 from app.services.ontology_loader import OntologyLoader
 
@@ -59,10 +61,21 @@ async def lifespan(app: FastAPI):
     _db = Database(settings.db_path)
     await _db.connect()
 
-    _engine = DialogueEngine(ollama=_ollama, ontology=_ontology, db=_db)
+    # Load knowledge graphs for MCTS-driven speaker selection
+    graph_manager = KnowledgeGraphManager()
+    graph_manager.load_all(settings.ontology_path)
+    domain_scores = graph_manager.compute_domain_scores([])
+    friction_matrix = graph_manager.compute_friction_matrix()
+
+    _engine = DialogueEngine(
+        ollama=_ollama, ontology=_ontology, db=_db,
+        domain_scores=domain_scores, friction_matrix=friction_matrix,
+    )
 
     persona_count = len(_ontology.list_all())
+    triple_count = graph_manager.triple_count
     print(f"[P.S.AI] Loaded {persona_count} personas from {settings.ontology_path}")
+    print(f"[P.S.AI] Knowledge graph: {triple_count} triples")
     print(f"[P.S.AI] Ollama endpoint: {settings.ollama_base_url}")
     print(f"[P.S.AI] Database: {settings.db_path}")
 
@@ -96,3 +109,10 @@ app.add_middleware(
 app.include_router(health.router, prefix="/api")
 app.include_router(personas.router, prefix="/api")
 app.include_router(dialogue.router, prefix="/api")
+
+
+@app.websocket("/ws")
+async def websocket_endpoint(websocket: WebSocket):
+    """Binary WebSocket endpoint for real-time Symposium streaming."""
+    handler = WebSocketHandler(websocket)
+    await handler.handle()

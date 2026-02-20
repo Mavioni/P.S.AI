@@ -1,0 +1,106 @@
+// P.S.AI — Posthumous Social Artificial Intelligence
+// Binary WebSocket protocol schema.
+
+syntax = "proto3";
+
+package psai;
+
+option java_package = "com.psai.proto";
+
+// ── Top-level envelopes ────────────────────────────────────────
+
+message ClientPacket {
+  string nonce = 1;           // Unique per-packet, for replay prevention
+  int64 timestamp_ms = 2;     // Unix epoch milliseconds
+  bytes hmac = 3;             // HMAC-SHA256 over serialized payload
+
+  oneof payload {
+    TextCommand text_command = 10;
+    AudioChunk audio_chunk = 11;
+    SessionControl session_control = 12;
+  }
+}
+
+message ServerPacket {
+  string nonce = 1;
+  int64 timestamp_ms = 2;
+  bytes hmac = 3;
+
+  oneof payload {
+    PersonaUtterance persona_utterance = 10;
+    StateUpdate state_update = 11;
+    ErrorMessage error = 12;
+  }
+}
+
+// ── Client payloads ────────────────────────────────────────────
+
+message TextCommand {
+  string text = 1;
+}
+
+message AudioChunk {
+  bytes pcm_data = 1;         // 16-bit 24kHz mono PCM
+  int32 sample_rate = 2;      // should be 24000
+  bool is_final = 3;          // signals end of utterance
+}
+
+message SessionControl {
+  enum Action {
+    CREATE = 0;
+    RESUME = 1;
+    PAUSE = 2;
+    STOP = 3;
+    DELETE = 4;
+  }
+  Action action = 1;
+  string session_id = 2;      // for RESUME/PAUSE/STOP/DELETE
+  SymposiumConfig config = 3;  // for CREATE
+}
+
+message SymposiumConfig {
+  string question = 1;
+  repeated string persona_ids = 2;
+  int32 max_turns = 3;
+  float temperature = 4;
+}
+
+// ── Server payloads ────────────────────────────────────────────
+
+message PersonaUtterance {
+  string persona_id = 1;
+  string persona_name = 2;
+  string content = 3;
+  int32 turn_number = 4;
+  bool is_streaming = 5;      // true while tokens are still arriving
+  bool is_final = 6;          // true when utterance is complete
+  bool is_speculation = 7;    // flagged when persona reasons beyond known works
+  float confidence = 8;       // model confidence [0.0 – 1.0]
+  repeated Citation citations = 9;
+}
+
+message Citation {
+  string source_id = 1;       // reference to a psai:Work
+  string excerpt = 2;
+  int32 page_number = 3;
+  float epistemic_weight = 4; // relevance weight [0.0 – 1.0]
+}
+
+message StateUpdate {
+  string session_id = 1;
+  int32 turn_number = 2;
+  string active_speaker_id = 3;
+  repeated PersonaStatus persona_statuses = 4;
+}
+
+message PersonaStatus {
+  string persona_id = 1;
+  string persona_name = 2;
+  bool is_speaking = 3;
+  float activity_level = 4;   // for constellation node opacity [0.0 – 1.0]
+}
+
+message ErrorMessage {
+  int32 code = 1;
+  string message = 2;
+}

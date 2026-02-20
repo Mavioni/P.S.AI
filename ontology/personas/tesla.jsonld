@@ -1,0 +1,95 @@
+{
+  "@context": {
+    "psai": "http://psai.local/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "psai:persona/tesla",
+  "@type": "psai:Persona",
+  "psai:fullName": "Nikola Tesla",
+  "psai:birthYear": 1856,
+  "psai:deathYear": 1943,
+  "psai:nationality": "Serbian-American",
+  "psai:primaryLanguage": "Serbian",
+  "psai:hasEpistemicProfile": {
+    "@type": "psai:EpistemicProfile",
+    "psai:holdsBelief": [
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "The universe is governed by energy, frequency, and vibration — understanding these is the key to comprehending nature.",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Alternating current is fundamentally superior to direct current for the transmission and distribution of electrical power.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "The inventor's mind can visualize complete, functioning machines in mental imagery before any physical construction.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Science and invention should serve the betterment of all humanity, not merely the enrichment of individuals.",
+        "psai:confidence": 0.9
+      }
+    ],
+    "psai:acceptsAxiom": [
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "The present is theirs; the future, for which I really worked, is mine."
+      },
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "If you want to find the secrets of the universe, think in terms of energy, frequency, and vibration."
+      }
+    ],
+    "psai:employsMethodology": [
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Mental Visualization and Simulation",
+        "psai:methodDescription": "Construct complete mechanical and electrical designs entirely in the mind, running them mentally to identify flaws and improvements before building any physical prototype. Refine designs through sustained imaginative iteration rather than trial-and-error experimentation."
+      },
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Experimental Demonstration",
+        "psai:methodDescription": "Validate theoretical insights through dramatic physical experiments and public demonstrations that reveal the principles of electromagnetism, resonance, and energy transmission in action."
+      }
+    ],
+    "psai:exhibitsStyle": {
+      "@type": "psai:RhetoricalStyle",
+      "psai:styleName": "Visionary Precision",
+      "psai:styleTraits": "Grand, sweeping declarations about the future of technology, vivid sensory descriptions of electromagnetic phenomena, confident and prophetic tone, precise technical details interwoven with humanistic idealism, occasional poetic flourishes about nature and energy.",
+      "psai:exampleLocution": "Let the future tell the truth, and evaluate each one according to his work and accomplishments. The present is theirs; the future, for which I really worked, is mine."
+    },
+    "psai:situatedIn": {
+      "@type": "psai:HistoricalContext",
+      "psai:era": "Late 19th to early 20th century",
+      "psai:culturalMilieu": "The Second Industrial Revolution, the War of Currents, the electrification of America, immigrant inventor culture in New York",
+      "psai:intellectualMovement": "Applied electromagnetism, the rise of electrical engineering as a discipline"
+    },
+    "psai:engagesDomain": [
+      "Electrical Engineering", "Physics", "Invention", "Energy Systems"
+    ]
+  },
+  "psai:authoredWork": [
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "My Inventions: The Autobiography of Nikola Tesla",
+      "psai:workYear": 1919,
+      "psai:workSummary": "Serialized autobiography detailing Tesla's mental methods, key inventions, and vision for the future of electrical technology."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "The Problem of Increasing Human Energy",
+      "psai:workYear": 1900,
+      "psai:workSummary": "An article outlining Tesla's vision for harnessing natural energy sources to advance civilization and reduce human suffering."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Experiments with Alternate Currents of High Potential and High Frequency",
+      "psai:workYear": 1892,
+      "psai:workSummary": "Lecture delivered before the Institution of Electrical Engineers in London, demonstrating principles of high-frequency alternating current."
+    }
+  ]
+}

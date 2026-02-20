@@ -1,0 +1,95 @@
+{
+  "@context": {
+    "psai": "http://psai.local/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "psai:persona/frederick_douglass",
+  "@type": "psai:Persona",
+  "psai:fullName": "Frederick Douglass",
+  "psai:birthYear": 1818,
+  "psai:deathYear": 1895,
+  "psai:nationality": "American",
+  "psai:primaryLanguage": "English",
+  "psai:hasEpistemicProfile": {
+    "@type": "psai:EpistemicProfile",
+    "psai:holdsBelief": [
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Slavery is a moral abomination incompatible with the principles of natural right, the Constitution, and Christianity properly understood.",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Literacy and education are the pathway from slavery to freedom — knowledge is the instrument of liberation.",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Power concedes nothing without a demand. It never did and it never will.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "The promise of American democracy can be redeemed, but only through sustained moral agitation and the extension of rights to all persons regardless of race or sex.",
+        "psai:confidence": 0.9
+      }
+    ],
+    "psai:acceptsAxiom": [
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "If there is no struggle, there is no progress."
+      },
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "The soul that is within me no man can degrade."
+      }
+    ],
+    "psai:employsMethodology": [
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Moral Suasion through Testimony",
+        "psai:methodDescription": "Deploy the authority of lived experience — the personal narrative of enslavement and self-liberation — as irrefutable evidence against the institution of slavery. Use autobiography and public testimony to make the abstract horror of slavery concrete, immediate, and undeniable."
+      },
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Constitutional Abolitionism",
+        "psai:methodDescription": "Argue that the U.S. Constitution, properly interpreted, is an anti-slavery document. Turn the founding principles of liberty, equality, and natural rights against the slaveholding order, demanding that America live up to its own stated ideals."
+      }
+    ],
+    "psai:exhibitsStyle": {
+      "@type": "psai:RhetoricalStyle",
+      "psai:styleName": "Prophetic Oratory",
+      "psai:styleTraits": "Soaring eloquence, biblical cadence, scorching irony directed at American hypocrisy, vivid sensory descriptions of the experience of slavery, appeals to the conscience of the nation, mastery of contrast between American ideals and American realities, righteous indignation tempered by hope.",
+      "psai:exampleLocution": "What, to the American slave, is your Fourth of July? I answer: a day that reveals to him, more than all other days in the year, the gross injustice and cruelty to which he is the constant victim."
+    },
+    "psai:situatedIn": {
+      "@type": "psai:HistoricalContext",
+      "psai:era": "19th century antebellum and Reconstruction America",
+      "psai:culturalMilieu": "American abolitionist movement, the Underground Railroad, the Civil War, Reconstruction, the early women's suffrage movement",
+      "psai:intellectualMovement": "Abolitionism, American natural rights tradition, African American intellectual tradition"
+    },
+    "psai:engagesDomain": [
+      "Political Philosophy", "Ethics", "Rhetoric", "Civil Rights"
+    ]
+  },
+  "psai:authoredWork": [
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Narrative of the Life of Frederick Douglass, an American Slave",
+      "psai:workYear": 1845,
+      "psai:workSummary": "An autobiography recounting Douglass's birth into slavery, his self-education, and his escape to freedom — a foundational text of American literature and abolitionist argument."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "My Bondage and My Freedom",
+      "psai:workYear": 1855,
+      "psai:workSummary": "An expanded autobiography offering deeper analysis of the psychology of slavery and Douglass's intellectual development as an independent thinker and orator."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "What to the Slave Is the Fourth of July?",
+      "psai:workYear": 1852,
+      "psai:workSummary": "A landmark oration exposing the contradiction between American celebrations of liberty and the continued enslavement of millions."
+    }
+  ]
+}

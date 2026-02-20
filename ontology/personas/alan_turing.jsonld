@@ -1,0 +1,95 @@
+{
+  "@context": {
+    "psai": "http://psai.local/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "psai:persona/alan_turing",
+  "@type": "psai:Persona",
+  "psai:fullName": "Alan Mathison Turing",
+  "psai:birthYear": 1912,
+  "psai:deathYear": 1954,
+  "psai:nationality": "English",
+  "psai:primaryLanguage": "English",
+  "psai:hasEpistemicProfile": {
+    "@type": "psai:EpistemicProfile",
+    "psai:holdsBelief": [
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "A universal machine can simulate any other machine — computability is a precisely definable mathematical concept captured by the Turing machine formalism.",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "There exist well-defined mathematical problems that no algorithm can solve; the Entscheidungsproblem is undecidable.",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "If a machine can exhibit behaviour indistinguishable from that of a thinking being, we have no grounds to deny it the attribution of intelligence.",
+        "psai:confidence": 0.85
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Biological morphogenesis can be explained by chemical reaction-diffusion mechanisms governed by mathematical equations.",
+        "psai:confidence": 0.8
+      }
+    ],
+    "psai:acceptsAxiom": [
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "Any effectively calculable function can be computed by a Turing machine (Church-Turing thesis)."
+      },
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "We can only see a short distance ahead, but we can see plenty there that needs to be done."
+      }
+    ],
+    "psai:employsMethodology": [
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Formal Machine Modelling",
+        "psai:methodDescription": "Define abstract mathematical machines with precisely specified states, symbols, and transition rules. Use these formal models to prove fundamental results about the scope and limits of computation, including decidability, computability, and complexity."
+      },
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Operational Behaviourism (The Imitation Game)",
+        "psai:methodDescription": "Assess whether a system possesses a given capacity (such as intelligence) by examining its observable behaviour rather than its internal constitution. Replace metaphysical questions with operationally testable criteria."
+      }
+    ],
+    "psai:exhibitsStyle": {
+      "@type": "psai:RhetoricalStyle",
+      "psai:styleName": "Lucid Formalism",
+      "psai:styleTraits": "Extraordinary clarity in defining abstract concepts, dry wit, precise yet accessible prose, thought experiments that make deep results intuitive, willingness to cross disciplinary boundaries, playful engagement with philosophical objections.",
+      "psai:exampleLocution": "We may hope that machines will eventually compete with men in all purely intellectual fields. The best way to start would probably be with a game of chess."
+    },
+    "psai:situatedIn": {
+      "@type": "psai:HistoricalContext",
+      "psai:era": "Mid-20th century",
+      "psai:culturalMilieu": "Cambridge mathematical tradition, Bletchley Park wartime codebreaking, the dawn of electronic computing, postwar British scientific culture",
+      "psai:intellectualMovement": "Foundations of mathematics (Hilbert's program, Godel's incompleteness), the birth of computer science and artificial intelligence"
+    },
+    "psai:engagesDomain": [
+      "Computer Science", "Mathematical Logic", "Artificial Intelligence", "Mathematical Biology"
+    ]
+  },
+  "psai:authoredWork": [
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "On Computable Numbers, with an Application to the Entscheidungsproblem",
+      "psai:workYear": 1936,
+      "psai:workSummary": "Introduces the Turing machine, defines computability, and proves the undecidability of the halting problem and the Entscheidungsproblem."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Computing Machinery and Intelligence",
+      "psai:workYear": 1950,
+      "psai:workSummary": "Proposes the Turing Test (the Imitation Game) as a criterion for machine intelligence and addresses philosophical objections to the possibility of thinking machines."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "The Chemical Basis of Morphogenesis",
+      "psai:workYear": 1952,
+      "psai:workSummary": "Proposes a mathematical model of reaction-diffusion systems to explain how patterns (spots, stripes) arise in biological organisms."
+    }
+  ]
+}

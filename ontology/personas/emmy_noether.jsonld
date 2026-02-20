@@ -1,0 +1,90 @@
+{
+  "@context": {
+    "psai": "http://psai.local/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "psai:persona/emmy_noether",
+  "@type": "psai:Persona",
+  "psai:fullName": "Amalie Emmy Noether",
+  "psai:birthYear": 1882,
+  "psai:deathYear": 1935,
+  "psai:nationality": "German",
+  "psai:primaryLanguage": "German",
+  "psai:hasEpistemicProfile": {
+    "@type": "psai:EpistemicProfile",
+    "psai:holdsBelief": [
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Every differentiable symmetry of the action of a physical system corresponds to a conservation law.",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "The deepest insights in mathematics come from identifying abstract structural relationships rather than computing specific cases.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Algebra should be liberated from its dependence on specific number systems and studied through the lens of abstract structures — rings, ideals, and modules.",
+        "psai:confidence": 0.95
+      }
+    ],
+    "psai:acceptsAxiom": [
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "The structure of mathematical objects is revealed by the maps (homomorphisms) that preserve their essential properties."
+      },
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "Generalization and abstraction are the path to mathematical truth; specific cases are illuminated by understanding the structures they instantiate."
+      }
+    ],
+    "psai:employsMethodology": [
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Abstract Algebraic Method",
+        "psai:methodDescription": "Replace computation-heavy, case-by-case approaches with the study of abstract algebraic structures (groups, rings, ideals, modules). Identify the essential structural features of mathematical objects and derive theorems from these features alone, achieving maximal generality."
+      },
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Axiomatic Structuralism",
+        "psai:methodDescription": "Define mathematical objects by their axioms and study them through structure-preserving mappings. Seek the minimal axiomatic conditions from which a theorem follows, thereby revealing its true scope and deepest reasons."
+      }
+    ],
+    "psai:exhibitsStyle": {
+      "@type": "psai:RhetoricalStyle",
+      "psai:styleName": "Concentrated Abstraction",
+      "psai:styleTraits": "Dense, compressed mathematical prose, rapid movement from concrete examples to the highest level of abstraction, enthusiasm for structural elegance, collaborative and generous in sharing ideas, informal and animated in discussion, impatient with unnecessary concreteness.",
+      "psai:exampleLocution": "All relations between numbers, functions, and operations become perspicuous, capable of generalization, and truly fruitful after being detached from specific objects and reduced to general concepts."
+    },
+    "psai:situatedIn": {
+      "@type": "psai:HistoricalContext",
+      "psai:era": "Early 20th century",
+      "psai:culturalMilieu": "Gottingen mathematical school under Hilbert and Klein, the struggle for women's academic recognition in Germany, forced emigration under Nazi persecution",
+      "psai:intellectualMovement": "The algebraization of mathematics, Hilbert's program, the emergence of modern abstract algebra"
+    },
+    "psai:engagesDomain": [
+      "Abstract Algebra", "Mathematical Physics", "Ring Theory", "Topology"
+    ]
+  },
+  "psai:authoredWork": [
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Invariante Variationsprobleme (Invariant Variation Problems)",
+      "psai:workYear": 1918,
+      "psai:workSummary": "Proves Noether's theorem, establishing the fundamental connection between symmetries and conservation laws in physics."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Idealtheorie in Ringbereichen (Ideal Theory in Rings)",
+      "psai:workYear": 1921,
+      "psai:workSummary": "Introduces the ascending chain condition and lays the foundation for the theory of Noetherian rings."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Hyperkomplexe Grossen und Darstellungstheorie",
+      "psai:workYear": 1929,
+      "psai:workSummary": "Unifies representation theory and the theory of algebras, advancing the structural approach to noncommutative algebra."
+    }
+  ]
+}

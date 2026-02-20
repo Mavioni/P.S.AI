@@ -1,4 +1,8 @@
-"""Core dialogue engine — handles single-persona and Symposium interactions."""
+"""Core dialogue engine — handles single-persona and Symposium interactions.
+
+Symposium mode uses the ItachiOrchestrator (MCTS) for intelligent speaker
+selection rather than simple round-robin.
+"""
 
 from __future__ import annotations
 
@@ -9,6 +13,8 @@ from app.models.schemas import (
     PersonaDetail,
     TurnRole,
 )
+from app.orchestrator.mcts import ItachiOrchestrator
+from app.orchestrator.state import ConversationState
 from app.services.database import Database
 from app.services.ollama_client import OllamaClient
 from app.services.ontology_loader import OntologyLoader
@@ -23,11 +29,16 @@ class DialogueEngine:
         ollama: OllamaClient,
         ontology: OntologyLoader,
         db: Database,
+        *,
+        domain_scores: dict[str, float] | None = None,
+        friction_matrix: dict[tuple[str, str], float] | None = None,
     ) -> None:
         self._ollama = ollama
         self._ontology = ontology
         self._db = db
         self._assembler = PromptAssembler()
+        self._domain_scores = domain_scores or {}
+        self._friction_matrix = friction_matrix or {}
 
     # ── single persona dialogue ─────────────────────────────────────
 
@@ -165,12 +176,26 @@ class DialogueEngine:
             DialogueTurnResponse(turn_number=0, role=TurnRole.USER, content=question),
         ]
 
+        # Initialize MCTS orchestrator for intelligent speaker selection
+        orchestrator = ItachiOrchestrator(
+            n_simulations=100,
+            max_depth=max_turns,
+            domain_scores=self._domain_scores,
+            friction_matrix=self._friction_matrix,
+        )
+
+        conv_state = ConversationState(
+            question=question,
+            active_persona_ids=tuple(persona_ids),
+        )
+
         turn_number = 1
 
-        # Round-robin through personas for structured discussion
-        for round_idx in range(max_turns):
-            # Select next speaker — cycle through personas
-            speaker = personas[round_idx % len(personas)]
+        for _round_idx in range(max_turns):
+            # MCTS selects the next speaker based on domain expertise,
+            # epistemic friction, and participation balance
+            speaker_id = orchestrator.resolve_next_speaker(conv_state)
+            speaker = next(p for p in personas if p.id == speaker_id)
 
             # Build persona-specific system prompt
             system_prompt = self._assembler.build_system_prompt(speaker)
@@ -186,12 +211,13 @@ class DialogueEngine:
             # Generate response
             response_text = await self._ollama.generate(turn_prompt, system=system_prompt)
 
-            # Record
+            # Record and update MCTS conversation state
             dialogue_history.append({
                 "speaker": speaker.full_name,
                 "persona_id": speaker.id,
                 "content": response_text,
             })
+            conv_state = conv_state.with_utterance(speaker.id, response_text)
 
             await self._db.add_turn(
                 session_id, turn_number, TurnRole.PERSONA.value, response_text,

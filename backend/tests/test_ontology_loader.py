@@ -11,7 +11,7 @@ def test_load_all_personas():
     """All bundled persona files should parse without error."""
     loader = OntologyLoader(ONTOLOGY_ROOT)
     personas = loader.load_all()
-    assert len(personas) >= 5, f"Expected at least 5 personas, got {len(personas)}"
+    assert len(personas) >= 20, f"Expected at least 20 personas, got {len(personas)}"
 
 
 def test_socrates_profile():
