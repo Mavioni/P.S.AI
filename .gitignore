@@ -29,5 +29,9 @@ Thumbs.db
 # Docker
 docker-compose.override.yml
 
+# Build output
+dist/
+.venv/
+
 # Data
 backend/data/*.db

@@ -1,4 +1,4 @@
-.PHONY: install dev test lint run proto docker clean
+.PHONY: install dev test lint run proto docker clean installer
 
 # ── Setup ──────────────────────────────────────────────────────
 
@@ -53,8 +53,14 @@ docker-down:
 setup-models:
 	./scripts/setup_models.sh
 
+# ── Installer ─────────────────────────────────────────────────
+
+installer:
+	bash scripts/build_installer.sh
+
 # ── Clean ──────────────────────────────────────────────────────
 
 clean:
 	find backend -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
 	rm -f backend/data/psai.db
+	rm -rf dist/
