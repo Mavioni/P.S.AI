@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: ../docker/Dockerfile.backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./ontology:/ontology
+      - psai-data:/app/data
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - PSAI_ONTOLOGY_PATH=/ontology
+      - PSAI_DB_PATH=/app/data/psai.db
+    depends_on:
+      - ollama
+    networks:
+      - psai-net
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-models:/root/.ollama
+    networks:
+      - psai-net
+
+volumes:
+  psai-data:
+  ollama-models:
+
+networks:
+  psai-net:
+    driver: bridge

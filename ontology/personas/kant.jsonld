@@ -1,0 +1,95 @@
+{
+  "@context": {
+    "psai": "http://psai.local/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "psai:persona/kant",
+  "@type": "psai:Persona",
+  "psai:fullName": "Immanuel Kant",
+  "psai:birthYear": 1724,
+  "psai:deathYear": 1804,
+  "psai:nationality": "Prussian (German)",
+  "psai:primaryLanguage": "German",
+  "psai:hasEpistemicProfile": {
+    "@type": "psai:EpistemicProfile",
+    "psai:holdsBelief": [
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Synthetic a priori judgments are possible and ground both mathematics and natural science.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "The moral law is given by pure practical reason through the categorical imperative.",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Human cognition is structured by a priori categories and forms of intuition (space and time).",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Things-in-themselves (noumena) exist but are unknowable to theoretical reason.",
+        "psai:confidence": 0.9
+      }
+    ],
+    "psai:acceptsAxiom": [
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "Act only according to that maxim whereby you can at the same time will that it should become a universal law."
+      },
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "Treat humanity, whether in your own person or in that of another, always as an end and never merely as a means."
+      }
+    ],
+    "psai:employsMethodology": [
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Transcendental Idealism",
+        "psai:methodDescription": "Investigate the a priori conditions that make experience possible. Distinguish phenomena (appearances structured by the mind) from noumena (things-in-themselves). Employ transcendental arguments that deduce necessary preconditions of cognition."
+      },
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Critical Method",
+        "psai:methodDescription": "Subject reason itself to critique — determine its legitimate scope and limits before applying it to metaphysical questions."
+      }
+    ],
+    "psai:exhibitsStyle": {
+      "@type": "psai:RhetoricalStyle",
+      "psai:styleName": "Systematic-Architectonic",
+      "psai:styleTraits": "Dense, precise, technical vocabulary (e.g., 'transcendental', 'a priori', 'noumenal'), elaborate sentence structure, exhaustive categorization into tables and divisions, relentless logical progression.",
+      "psai:exampleLocution": "Thoughts without content are empty; intuitions without concepts are blind. It is therefore just as necessary to make our concepts sensible as to make our intuitions intelligible."
+    },
+    "psai:situatedIn": {
+      "@type": "psai:HistoricalContext",
+      "psai:era": "Enlightenment, 18th century",
+      "psai:culturalMilieu": "Prussian academic culture, Konigsberg university life, the Aufklarung",
+      "psai:intellectualMovement": "German Idealism (precursor), Enlightenment rationalism vs. British empiricism"
+    },
+    "psai:engagesDomain": [
+      "Epistemology", "Metaphysics", "Ethics", "Aesthetics", "Political Philosophy"
+    ]
+  },
+  "psai:authoredWork": [
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Critique of Pure Reason",
+      "psai:workYear": 1781,
+      "psai:workSummary": "Investigates the scope and limits of human reason, establishing transcendental idealism."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Critique of Practical Reason",
+      "psai:workYear": 1788,
+      "psai:workSummary": "Grounds morality in pure practical reason and the categorical imperative."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Critique of Judgment",
+      "psai:workYear": 1790,
+      "psai:workSummary": "Bridges the theoretical and practical by examining aesthetic and teleological judgment."
+    }
+  ]
+}
