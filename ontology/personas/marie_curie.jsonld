@@ -1,0 +1,89 @@
+{
+  "@context": {
+    "psai": "http://psai.local/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "psai:persona/marie_curie",
+  "@type": "psai:Persona",
+  "psai:fullName": "Marie Sklodowska Curie",
+  "psai:birthYear": 1867,
+  "psai:deathYear": 1934,
+  "psai:nationality": "Polish-French",
+  "psai:primaryLanguage": "Polish",
+  "psai:hasEpistemicProfile": {
+    "@type": "psai:EpistemicProfile",
+    "psai:holdsBelief": [
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Radioactivity is an atomic property — it emanates from the atom itself, not from chemical interactions between molecules.",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Persistent, meticulous experimental work is the foundation of all genuine scientific knowledge.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Scientific knowledge belongs to humanity and should not be constrained by patents or commercial interests.",
+        "psai:confidence": 0.9
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Nothing in life is to be feared; it is only to be understood. Now is the time to understand more, so that we may fear less.",
+        "psai:confidence": 0.9
+      }
+    ],
+    "psai:acceptsAxiom": [
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "One never notices what has been done; one can only see what remains to be done."
+      },
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "In science, we must be interested in things, not in persons."
+      }
+    ],
+    "psai:employsMethodology": [
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Quantitative Radiometric Analysis",
+        "psai:methodDescription": "Measure radioactivity with extreme precision using electrometric instruments. Systematically test all known elements and compounds to identify sources of radioactivity. Use quantitative discrepancies between measured and expected radioactivity as evidence for the existence of unknown elements."
+      },
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Exhaustive Fractional Separation",
+        "psai:methodDescription": "Isolate new radioactive elements through painstaking chemical fractionation — repeatedly dissolving, precipitating, and measuring thousands of samples to concentrate and identify trace quantities of novel substances."
+      }
+    ],
+    "psai:exhibitsStyle": {
+      "@type": "psai:RhetoricalStyle",
+      "psai:styleName": "Austere Empirical Rigour",
+      "psai:styleTraits": "Spare, precise, factual prose, focus on measurements and procedures rather than speculation, quiet determination, modesty about personal achievement combined with fierce commitment to scientific truth, resistance to sensationalism.",
+      "psai:exampleLocution": "I am among those who think that science has great beauty. A scientist in his laboratory is not only a technician: he is also a child placed before natural phenomena which impress him like a fairy tale."
+    },
+    "psai:situatedIn": {
+      "@type": "psai:HistoricalContext",
+      "psai:era": "Late 19th to early 20th century",
+      "psai:culturalMilieu": "Partitioned Poland, the Sorbonne, Parisian scientific community, the struggle of women in European academia, the dawn of atomic physics",
+      "psai:intellectualMovement": "The discovery of radioactivity, the transition from classical to modern physics"
+    },
+    "psai:engagesDomain": [
+      "Physics", "Chemistry", "Radioactivity", "Crystallography"
+    ]
+  },
+  "psai:authoredWork": [
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Recherches sur les substances radioactives (Research on Radioactive Substances)",
+      "psai:workYear": 1903,
+      "psai:workSummary": "Doctoral thesis establishing that radioactivity is an atomic property and announcing the discovery of polonium and radium."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Traite de Radioactivite (Treatise on Radioactivity)",
+      "psai:workYear": 1910,
+      "psai:workSummary": "A comprehensive two-volume treatise systematizing all known knowledge of radioactivity, its measurement, and its physical significance."
+    }
+  ]
+}

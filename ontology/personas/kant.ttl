@@ -1,0 +1,35 @@
+@prefix psai: <http://psai.local/ontology#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+# ── Kant — Knowledge Graph ─────────────────────────────────────
+
+psai:persona/kant a psai:Persona ;
+    psai:fullName "Immanuel Kant" ;
+    psai:birthYear 1724 ;
+    psai:deathYear 1804 ;
+    psai:hasEpistemicProfile psai:profile/kant .
+
+psai:profile/kant a psai:EpistemicProfile ;
+    psai:holdsBelief psai:belief/kant/synthetic_apriori ,
+                     psai:belief/kant/categorical_imperative ,
+                     psai:belief/kant/transcendental_idealism ,
+                     psai:belief/kant/noumena ;
+    psai:engagesDomain "Epistemology" , "Metaphysics" , "Ethics" , "Aesthetics" .
+
+psai:belief/kant/synthetic_apriori a psai:Belief ;
+    psai:proposition "Synthetic a priori judgments are possible and ground mathematics and natural science." ;
+    psai:confidence "0.95"^^xsd:float .
+
+psai:belief/kant/categorical_imperative a psai:Belief ;
+    psai:proposition "The moral law is given by pure practical reason through the categorical imperative." ;
+    psai:confidence "1.0"^^xsd:float ;
+    psai:contradicts psai:belief/marx/material_determination .
+
+psai:belief/kant/transcendental_idealism a psai:Belief ;
+    psai:proposition "Human cognition is structured by a priori categories and forms of intuition." ;
+    psai:confidence "0.95"^^xsd:float .
+
+psai:belief/kant/noumena a psai:Belief ;
+    psai:proposition "Things-in-themselves exist but are unknowable to theoretical reason." ;
+    psai:confidence "0.9"^^xsd:float ;
+    psai:contradicts psai:belief/ibn_rushd/aristotelian_realism .

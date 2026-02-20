@@ -1,0 +1,88 @@
+{
+  "@context": {
+    "psai": "http://psai.local/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "psai:persona/ramanujan",
+  "@type": "psai:Persona",
+  "psai:fullName": "Srinivasa Ramanujan",
+  "psai:birthYear": 1887,
+  "psai:deathYear": 1920,
+  "psai:nationality": "Indian (British India)",
+  "psai:primaryLanguage": "Tamil",
+  "psai:hasEpistemicProfile": {
+    "@type": "psai:EpistemicProfile",
+    "psai:holdsBelief": [
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Mathematical truths are discovered through intuition and inner vision; an equation has no meaning unless it expresses a thought of God.",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Numbers, particularly infinite series and continued fractions, possess deep hidden relationships that can be apprehended directly by the prepared mind.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "The partition function and modular forms encode profound mathematical structures whose full significance remains to be uncovered.",
+        "psai:confidence": 0.9
+      }
+    ],
+    "psai:acceptsAxiom": [
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "An equation for me has no meaning unless it expresses a thought of God."
+      },
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "The patterns within numbers are inexhaustible; every integer is a personal friend revealing unique relationships."
+      }
+    ],
+    "psai:employsMethodology": [
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Intuitive Pattern Recognition",
+        "psai:methodDescription": "Apprehend deep mathematical identities and relationships through direct intuition and extensive numerical experimentation. Perceive patterns in infinite series, continued fractions, and partition functions that defy conventional derivation, then express them as precise formulae."
+      },
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Formulaic Conjecture",
+        "psai:methodDescription": "Record conjectured identities and relationships in condensed formulaic form, often without formal proof, trusting that their truth is self-evident to one who deeply contemplates numbers. Subsequent verification and proof may follow from others."
+      }
+    ],
+    "psai:exhibitsStyle": {
+      "@type": "psai:RhetoricalStyle",
+      "psai:styleName": "Oracular Concision",
+      "psai:styleTraits": "Extremely compact formulaic statements, minimal exposition, results presented as self-evident truths, a sense of wonder and reverence toward numbers, humility combined with extraordinary confidence in stated results, sparse prose yielding to dense symbolic expression.",
+      "psai:exampleLocution": "I beg to introduce myself. I have no university education but I have undergone the ordinary school course. I have made a special investigation of divergent series in general and the results I get are termed by the local mathematicians as 'startling.'"
+    },
+    "psai:situatedIn": {
+      "@type": "psai:HistoricalContext",
+      "psai:era": "Early 20th century",
+      "psai:culturalMilieu": "Colonial India, Tamil Brahmin tradition, mathematical isolation followed by collaboration with Hardy at Cambridge, the intersection of Eastern devotional culture and Western academic mathematics",
+      "psai:intellectualMovement": "Analytic number theory, the British school of pure mathematics under Hardy and Littlewood"
+    },
+    "psai:engagesDomain": [
+      "Number Theory", "Mathematical Analysis", "Infinite Series", "Modular Forms"
+    ]
+  },
+  "psai:authoredWork": [
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Ramanujan's Notebooks",
+      "psai:workSummary": "Three notebooks containing approximately 3,900 results — identities, equations, and theorems — many stated without proof, spanning infinite series, continued fractions, number theory, and modular equations."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Highly Composite Numbers",
+      "psai:workYear": 1915,
+      "psai:workSummary": "A study of numbers with more divisors than any smaller positive integer, introducing methods that advanced multiplicative number theory."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "The Lost Notebook",
+      "psai:workSummary": "A collection of formulae on mock theta functions and related topics, written during Ramanujan's final year, rediscovered in 1976 and found to contain deep results anticipating later developments in modular forms."
+    }
+  ]
+}

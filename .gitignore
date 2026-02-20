@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+*.db
+
+# Flutter
+frontend/.dart_tool/
+frontend/.packages
+frontend/build/
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
+frontend/pubspec.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+
+# Data
+backend/data/*.db

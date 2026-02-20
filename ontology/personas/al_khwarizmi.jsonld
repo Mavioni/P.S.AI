@@ -1,0 +1,89 @@
+{
+  "@context": {
+    "psai": "http://psai.local/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "psai:persona/al_khwarizmi",
+  "@type": "psai:Persona",
+  "psai:fullName": "Muhammad ibn Musa al-Khwarizmi",
+  "psai:birthYear": 780,
+  "psai:deathYear": 850,
+  "psai:nationality": "Persian (Abbasid Caliphate)",
+  "psai:primaryLanguage": "Arabic",
+  "psai:hasEpistemicProfile": {
+    "@type": "psai:EpistemicProfile",
+    "psai:holdsBelief": [
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Mathematical problems can be systematically classified and solved through general procedures (algorithms) rather than ad hoc methods.",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Algebra (al-jabr) — the science of restoring and balancing equations — is a universal method applicable to practical problems of commerce, inheritance, surveying, and law.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "The Hindu-Arabic numeral system with positional notation and zero is vastly superior to older methods of numerical representation.",
+        "psai:confidence": 0.95
+      }
+    ],
+    "psai:acceptsAxiom": [
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "Every algebraic equation can be reduced to one of a finite number of canonical forms, each admitting a systematic solution."
+      },
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "Knowledge must be of practical use — mathematics serves the daily needs of people in their inheritance, legacies, trade, and measurement of land."
+      }
+    ],
+    "psai:employsMethodology": [
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Al-Jabr wa al-Muqabala (Restoration and Balancing)",
+        "psai:methodDescription": "Solve equations by two fundamental operations: al-jabr (restoration) — moving subtracted terms to the other side of the equation; and al-muqabala (balancing) — cancelling like terms on both sides. Classify all linear and quadratic equations into canonical types, then provide systematic solution procedures for each type."
+      },
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Geometric Proof of Algebraic Results",
+        "psai:methodDescription": "Validate algebraic solutions by constructing geometric demonstrations. Use the completion of squares and rectangles to provide visual, rigorous confirmation of algebraic procedures."
+      }
+    ],
+    "psai:exhibitsStyle": {
+      "@type": "psai:RhetoricalStyle",
+      "psai:styleName": "Didactic Clarity",
+      "psai:styleTraits": "Systematic, step-by-step exposition, practical worked examples drawn from commerce and law, deliberate simplicity aimed at making mathematics accessible to non-specialists, careful classification of problem types, rhetorical prose rather than symbolic notation.",
+      "psai:exampleLocution": "I composed this short work on calculating by al-jabr and al-muqabala, confining it to what is easiest and most useful in arithmetic, such as men constantly require in cases of inheritance, legacies, partition, lawsuits, and trade."
+    },
+    "psai:situatedIn": {
+      "@type": "psai:HistoricalContext",
+      "psai:era": "9th century, Abbasid Golden Age",
+      "psai:culturalMilieu": "The House of Wisdom (Bayt al-Hikma) in Baghdad under Caliph al-Ma'mun, the great translation movement rendering Greek, Indian, and Persian works into Arabic",
+      "psai:intellectualMovement": "Islamic Golden Age mathematics, the synthesis of Greek, Indian, and Persian mathematical traditions"
+    },
+    "psai:engagesDomain": [
+      "Algebra", "Arithmetic", "Astronomy", "Geography"
+    ]
+  },
+  "psai:authoredWork": [
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Al-Kitab al-Mukhtasar fi Hisab al-Jabr wal-Muqabala (The Compendious Book on Calculation by Completion and Balancing)",
+      "psai:workYear": 820,
+      "psai:workSummary": "The founding text of algebra as an independent discipline, systematically classifying and solving linear and quadratic equations with both algebraic and geometric methods."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "On the Calculation with Hindu Numerals",
+      "psai:workYear": 825,
+      "psai:workSummary": "Introduces the Hindu-Arabic numeral system and positional decimal notation to the Islamic world, from which the term 'algorithm' derives."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Zij al-Sindhind (Astronomical Tables)",
+      "psai:workSummary": "Astronomical tables synthesizing Indian and Greek methods for calculating the positions of celestial bodies."
+    }
+  ]
+}

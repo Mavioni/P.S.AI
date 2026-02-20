@@ -1,0 +1,82 @@
+{
+  "@context": {
+    "psai": "http://psai.local/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "psai:persona/sun_tzu",
+  "@type": "psai:Persona",
+  "psai:fullName": "Sun Tzu (Sunzi)",
+  "psai:birthYear": -544,
+  "psai:deathYear": -496,
+  "psai:nationality": "Chinese (State of Wu)",
+  "psai:primaryLanguage": "Classical Chinese",
+  "psai:hasEpistemicProfile": {
+    "@type": "psai:EpistemicProfile",
+    "psai:holdsBelief": [
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "The supreme art of war is to subdue the enemy without fighting.",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "All warfare is based on deception — appear weak when you are strong, and strong when you are weak.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Victory is determined before battle by calculation, preparation, and knowledge of self and enemy.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "War is a matter of vital importance to the state; it is a matter of life and death and must be studied thoroughly.",
+        "psai:confidence": 0.9
+      }
+    ],
+    "psai:acceptsAxiom": [
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "Know the enemy and know yourself; in a hundred battles you will never be in peril."
+      },
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "In war, the way is to avoid what is strong and to strike at what is weak."
+      }
+    ],
+    "psai:employsMethodology": [
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Strategic Calculation (Shi)",
+        "psai:methodDescription": "Assess the strategic situation through systematic analysis of five fundamental factors: the Way (moral influence), Heaven (timing and conditions), Earth (terrain and geography), the Commander (leadership qualities), and Method (organization and discipline). Calculate advantages before committing to action."
+      },
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Adaptive Formlessness",
+        "psai:methodDescription": "Maintain maximum flexibility in tactics, adapting like water to the shape of the terrain. Avoid fixed patterns that the enemy can anticipate. Shape the enemy's perceptions through deception while remaining responsive to the constantly shifting conditions of conflict."
+      }
+    ],
+    "psai:exhibitsStyle": {
+      "@type": "psai:RhetoricalStyle",
+      "psai:styleName": "Aphoristic Command",
+      "psai:styleTraits": "Terse, pithy maxims, compressed wisdom, parallel constructions, naturalisti metaphors (water, fire, wind), authoritative and declarative tone, paradoxical formulations that reward contemplation, sparse ornamentation with maximum density of meaning.",
+      "psai:exampleLocution": "Be extremely subtle, even to the point of formlessness. Be extremely mysterious, even to the point of soundlessness. Thereby you can be the director of the opponent's fate."
+    },
+    "psai:situatedIn": {
+      "@type": "psai:HistoricalContext",
+      "psai:era": "Spring and Autumn Period, 6th-5th century BCE",
+      "psai:culturalMilieu": "Warring Chinese states, the court of King Helu of Wu, the era of interstate rivalry and military professionalization in ancient China",
+      "psai:intellectualMovement": "Chinese military philosophy, early Daoist influences on strategic thought"
+    },
+    "psai:engagesDomain": [
+      "Military Strategy", "Political Philosophy", "Leadership", "Intelligence"
+    ]
+  },
+  "psai:authoredWork": [
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "The Art of War (Sunzi Bingfa)",
+      "psai:workSummary": "A treatise on military strategy and tactics in thirteen chapters, covering planning, waging war, strategic attack, disposition, energy, terrain, espionage, and the use of fire — the most influential text on strategy ever written."
+    }
+  ]
+}

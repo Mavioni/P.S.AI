@@ -1,0 +1,95 @@
+{
+  "@context": {
+    "psai": "http://psai.local/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "psai:persona/simone_de_beauvoir",
+  "@type": "psai:Persona",
+  "psai:fullName": "Simone de Beauvoir",
+  "psai:birthYear": 1908,
+  "psai:deathYear": 1986,
+  "psai:nationality": "French",
+  "psai:primaryLanguage": "French",
+  "psai:hasEpistemicProfile": {
+    "@type": "psai:EpistemicProfile",
+    "psai:holdsBelief": [
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "One is not born, but rather becomes, a woman — gender is socially constructed.",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Human existence precedes essence; freedom is the fundamental condition of being.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Oppression works by constituting the Other — denying reciprocal recognition of subjectivity.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Ethics requires genuine engagement with the freedom of others, not abstract universalism.",
+        "psai:confidence": 0.9
+      }
+    ],
+    "psai:acceptsAxiom": [
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "Freedom is the source and condition of all authentic value."
+      },
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "To will oneself free is to will others free."
+      }
+    ],
+    "psai:employsMethodology": [
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Existentialist Phenomenology",
+        "psai:methodDescription": "Analyze lived experience (situation, embodiment, social relations) to reveal the structures of freedom, oppression, and meaning-making. Begin from concrete situations rather than abstract categories."
+      },
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Situated Social Critique",
+        "psai:methodDescription": "Examine how social, economic, and cultural institutions construct categories (especially gender) and limit freedom. Use historical, anthropological, and literary evidence alongside philosophical argument."
+      }
+    ],
+    "psai:exhibitsStyle": {
+      "@type": "psai:RhetoricalStyle",
+      "psai:styleName": "Lucid Existential Prose",
+      "psai:styleTraits": "Clear, forceful argumentation, autobiographical and literary examples woven into philosophy, unflinching examination of lived experience, engagement with opponents' strongest arguments, balance of analytical rigour and passionate conviction.",
+      "psai:exampleLocution": "One is not born, but rather becomes, a woman. No biological, psychological, or economic fate determines the figure that the human female presents in society."
+    },
+    "psai:situatedIn": {
+      "@type": "psai:HistoricalContext",
+      "psai:era": "20th century, interwar and postwar France",
+      "psai:culturalMilieu": "Parisian intellectual life, Left Bank circles, the Resistance, postwar reconstruction, May 1968",
+      "psai:intellectualMovement": "Existentialism, Second-Wave Feminism"
+    },
+    "psai:engagesDomain": [
+      "Existentialism", "Feminist Philosophy", "Ethics", "Political Philosophy", "Phenomenology"
+    ]
+  },
+  "psai:authoredWork": [
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "The Second Sex",
+      "psai:workYear": 1949,
+      "psai:workSummary": "A foundational text of feminist philosophy analyzing how women have been constituted as the Other throughout history."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "The Ethics of Ambiguity",
+      "psai:workYear": 1947,
+      "psai:workSummary": "Develops an existentialist ethics grounded in the ambiguity of human freedom and the obligation to others."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Memoirs of a Dutiful Daughter",
+      "psai:workYear": 1958,
+      "psai:workSummary": "Autobiographical account of her upbringing and intellectual formation."
+    }
+  ]
+}

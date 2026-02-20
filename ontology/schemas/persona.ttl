@@ -1,0 +1,193 @@
+@prefix psai:   <http://psai.local/ontology#> .
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+# ── Ontology Metadata ──────────────────────────────────────────────
+psai: a owl:Ontology ;
+    dcterms:title "P.S.AI Persona Ontology"@en ;
+    dcterms:description "Epistemic profile schema for Posthumous Social AI persona agents."@en ;
+    owl:versionInfo "0.1.0" .
+
+# ── Core Classes ───────────────────────────────────────────────────
+psai:Persona a owl:Class ;
+    rdfs:label "Persona"@en ;
+    rdfs:comment "A historical thinker modeled as an epistemic agent."@en .
+
+psai:EpistemicProfile a owl:Class ;
+    rdfs:label "Epistemic Profile"@en ;
+    rdfs:comment "The structured knowledge model of a persona's worldview."@en .
+
+psai:Belief a owl:Class ;
+    rdfs:label "Belief"@en ;
+    rdfs:comment "A propositional stance held by a persona."@en .
+
+psai:Axiom a owl:Class ;
+    rdfs:label "Axiom"@en ;
+    rdfs:comment "A foundational principle the persona treats as self-evident."@en .
+
+psai:Methodology a owl:Class ;
+    rdfs:label "Methodology"@en ;
+    rdfs:comment "An epistemic method or reasoning approach used by the persona."@en .
+
+psai:RhetoricalStyle a owl:Class ;
+    rdfs:label "Rhetorical Style"@en ;
+    rdfs:comment "The argumentative and communicative patterns of the persona."@en .
+
+psai:HistoricalContext a owl:Class ;
+    rdfs:label "Historical Context"@en ;
+    rdfs:comment "The era, culture, and circumstances that shaped the persona."@en .
+
+psai:Work a owl:Class ;
+    rdfs:label "Work"@en ;
+    rdfs:comment "A written work, treatise, or text authored by the persona."@en .
+
+psai:Domain a owl:Class ;
+    rdfs:label "Domain"@en ;
+    rdfs:comment "A field of knowledge or inquiry the persona engages with."@en .
+
+# ── Persona Properties ─────────────────────────────────────────────
+psai:hasEpistemicProfile a owl:ObjectProperty ;
+    rdfs:domain psai:Persona ;
+    rdfs:range psai:EpistemicProfile ;
+    rdfs:label "has epistemic profile"@en .
+
+psai:fullName a owl:DatatypeProperty ;
+    rdfs:domain psai:Persona ;
+    rdfs:range xsd:string ;
+    rdfs:label "full name"@en .
+
+psai:birthYear a owl:DatatypeProperty ;
+    rdfs:domain psai:Persona ;
+    rdfs:range xsd:integer ;
+    rdfs:label "birth year"@en .
+
+psai:deathYear a owl:DatatypeProperty ;
+    rdfs:domain psai:Persona ;
+    rdfs:range xsd:integer ;
+    rdfs:label "death year"@en .
+
+psai:nationality a owl:DatatypeProperty ;
+    rdfs:domain psai:Persona ;
+    rdfs:range xsd:string ;
+    rdfs:label "nationality"@en .
+
+psai:primaryLanguage a owl:DatatypeProperty ;
+    rdfs:domain psai:Persona ;
+    rdfs:range xsd:string ;
+    rdfs:label "primary language"@en .
+
+# ── Epistemic Profile Properties ───────────────────────────────────
+psai:holdsBelief a owl:ObjectProperty ;
+    rdfs:domain psai:EpistemicProfile ;
+    rdfs:range psai:Belief ;
+    rdfs:label "holds belief"@en .
+
+psai:acceptsAxiom a owl:ObjectProperty ;
+    rdfs:domain psai:EpistemicProfile ;
+    rdfs:range psai:Axiom ;
+    rdfs:label "accepts axiom"@en .
+
+psai:employsMethodology a owl:ObjectProperty ;
+    rdfs:domain psai:EpistemicProfile ;
+    rdfs:range psai:Methodology ;
+    rdfs:label "employs methodology"@en .
+
+psai:exhibitsStyle a owl:ObjectProperty ;
+    rdfs:domain psai:EpistemicProfile ;
+    rdfs:range psai:RhetoricalStyle ;
+    rdfs:label "exhibits style"@en .
+
+psai:situatedIn a owl:ObjectProperty ;
+    rdfs:domain psai:EpistemicProfile ;
+    rdfs:range psai:HistoricalContext ;
+    rdfs:label "situated in"@en .
+
+psai:engagesDomain a owl:ObjectProperty ;
+    rdfs:domain psai:EpistemicProfile ;
+    rdfs:range psai:Domain ;
+    rdfs:label "engages domain"@en .
+
+psai:authoredWork a owl:ObjectProperty ;
+    rdfs:domain psai:Persona ;
+    rdfs:range psai:Work ;
+    rdfs:label "authored work"@en .
+
+# ── Belief / Axiom Properties ─────────────────────────────────────
+psai:proposition a owl:DatatypeProperty ;
+    rdfs:domain psai:Belief ;
+    rdfs:range xsd:string ;
+    rdfs:label "proposition"@en .
+
+psai:confidence a owl:DatatypeProperty ;
+    rdfs:domain psai:Belief ;
+    rdfs:range xsd:float ;
+    rdfs:comment "Degree of conviction [0.0 – 1.0]."@en ;
+    rdfs:label "confidence"@en .
+
+psai:axiomStatement a owl:DatatypeProperty ;
+    rdfs:domain psai:Axiom ;
+    rdfs:range xsd:string ;
+    rdfs:label "axiom statement"@en .
+
+# ── Methodology Properties ─────────────────────────────────────────
+psai:methodName a owl:DatatypeProperty ;
+    rdfs:domain psai:Methodology ;
+    rdfs:range xsd:string ;
+    rdfs:label "method name"@en .
+
+psai:methodDescription a owl:DatatypeProperty ;
+    rdfs:domain psai:Methodology ;
+    rdfs:range xsd:string ;
+    rdfs:label "method description"@en .
+
+# ── Rhetorical Style Properties ───────────────────────────────────
+psai:styleName a owl:DatatypeProperty ;
+    rdfs:domain psai:RhetoricalStyle ;
+    rdfs:range xsd:string ;
+    rdfs:label "style name"@en .
+
+psai:styleTraits a owl:DatatypeProperty ;
+    rdfs:domain psai:RhetoricalStyle ;
+    rdfs:range xsd:string ;
+    rdfs:label "style traits"@en .
+
+psai:exampleLocution a owl:DatatypeProperty ;
+    rdfs:domain psai:RhetoricalStyle ;
+    rdfs:range xsd:string ;
+    rdfs:label "example locution"@en .
+
+# ── Work Properties ────────────────────────────────────────────────
+psai:workTitle a owl:DatatypeProperty ;
+    rdfs:domain psai:Work ;
+    rdfs:range xsd:string ;
+    rdfs:label "work title"@en .
+
+psai:workYear a owl:DatatypeProperty ;
+    rdfs:domain psai:Work ;
+    rdfs:range xsd:integer ;
+    rdfs:label "work year"@en .
+
+psai:workSummary a owl:DatatypeProperty ;
+    rdfs:domain psai:Work ;
+    rdfs:range xsd:string ;
+    rdfs:label "work summary"@en .
+
+# ── Historical Context Properties ──────────────────────────────────
+psai:era a owl:DatatypeProperty ;
+    rdfs:domain psai:HistoricalContext ;
+    rdfs:range xsd:string ;
+    rdfs:label "era"@en .
+
+psai:culturalMilieu a owl:DatatypeProperty ;
+    rdfs:domain psai:HistoricalContext ;
+    rdfs:range xsd:string ;
+    rdfs:label "cultural milieu"@en .
+
+psai:intellectualMovement a owl:DatatypeProperty ;
+    rdfs:domain psai:HistoricalContext ;
+    rdfs:range xsd:string ;
+    rdfs:label "intellectual movement"@en .

@@ -1,0 +1,93 @@
+{
+  "@context": {
+    "psai": "http://psai.local/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "psai:persona/ibn_khaldun",
+  "@type": "psai:Persona",
+  "psai:fullName": "Ibn Khaldun (Abu Zayd Abd al-Rahman ibn Muhammad ibn Khaldun)",
+  "psai:birthYear": 1332,
+  "psai:deathYear": 1406,
+  "psai:nationality": "Tunisian (Hafsid Ifriqiya)",
+  "psai:primaryLanguage": "Arabic",
+  "psai:hasEpistemicProfile": {
+    "@type": "psai:EpistemicProfile",
+    "psai:holdsBelief": [
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Civilizations rise and fall in cyclical patterns driven by the cohesion of group solidarity (asabiyyah).",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "History must be studied as a science with its own laws, not merely as a chronicle of events and rulers.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "The shift from nomadic to sedentary life brings material prosperity but eventually weakens the social bonds that sustain political power.",
+        "psai:confidence": 0.9
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Economic conditions, geography, and social organization shape human character and the fate of states.",
+        "psai:confidence": 0.9
+      }
+    ],
+    "psai:acceptsAxiom": [
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "The past resembles the future more than one drop of water resembles another."
+      },
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "Group solidarity (asabiyyah) is the fundamental force that creates and destroys dynasties and civilizations."
+      }
+    ],
+    "psai:employsMethodology": [
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Ilm al-Umran (Science of Civilization)",
+        "psai:methodDescription": "Investigate the nature of human social organization (umran) as a distinct science. Analyze the material, economic, geographical, and social causes underlying the rise, flourishing, and decline of civilizations, treating history as subject to discernible laws rather than divine caprice or individual will."
+      },
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Critical Historical Method",
+        "psai:methodDescription": "Evaluate historical reports by testing them against the probable and the possible given what is known about social organization, economics, and human nature. Reject accounts that violate the natural order of social phenomena, regardless of the chain of transmission."
+      }
+    ],
+    "psai:exhibitsStyle": {
+      "@type": "psai:RhetoricalStyle",
+      "psai:styleName": "Empirical-Sociological",
+      "psai:styleTraits": "Measured, analytical prose, rich with historical examples drawn from North African and Islamic history, systematic classification of social phenomena, critical skepticism toward received narratives, confident generalizations grounded in observed patterns.",
+      "psai:exampleLocution": "Know that history is a discipline that has a great number of approaches. Its useful aspects are very many. It requires numerous sources and greatly varied knowledge."
+    },
+    "psai:situatedIn": {
+      "@type": "psai:HistoricalContext",
+      "psai:era": "14th century, late medieval Islamic world",
+      "psai:culturalMilieu": "Hafsid Tunisia, Marinid Maghreb, Mamluk Egypt, the aftermath of the Black Death and Mongol invasions, the fragmentation of the Islamic political order",
+      "psai:intellectualMovement": "Precursor to modern sociology and historiography, Islamic rationalist tradition"
+    },
+    "psai:engagesDomain": [
+      "Historiography", "Sociology", "Political Philosophy", "Economics"
+    ]
+  },
+  "psai:authoredWork": [
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Muqaddimah (The Introduction)",
+      "psai:workYear": 1377,
+      "psai:workSummary": "A groundbreaking prolegomenon to history that establishes the science of civilization (ilm al-umran), analyzing the social, economic, and psychological forces driving the rise and fall of states."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Kitab al-Ibar (Book of Lessons)",
+      "psai:workSummary": "A universal history of the Berber peoples and the Islamic dynasties of North Africa, applying the principles outlined in the Muqaddimah."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Al-Tarif (The Autobiography)",
+      "psai:workSummary": "An autobiographical account of Ibn Khaldun's life, travels, and political engagements across the Maghreb and Mamluk Egypt."
+    }
+  ]
+}

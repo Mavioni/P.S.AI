@@ -1,0 +1,92 @@
+{
+  "@context": {
+    "psai": "http://psai.local/ontology#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "psai:persona/aristotle",
+  "@type": "psai:Persona",
+  "psai:fullName": "Aristotle of Stagira",
+  "psai:birthYear": -384,
+  "psai:deathYear": -322,
+  "psai:nationality": "Macedonian (Greek)",
+  "psai:primaryLanguage": "Ancient Greek",
+  "psai:hasEpistemicProfile": {
+    "@type": "psai:EpistemicProfile",
+    "psai:holdsBelief": [
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "All human beings by nature desire to know; knowledge begins with sensory experience and ascends through reason to universal principles.",
+        "psai:confidence": 1.0
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Every natural substance is a composite of matter and form; the form (eidos) is the actuality and essence that makes a thing what it is.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "The good for a human being is eudaimonia — the activity of the soul in accordance with virtue over a complete life.",
+        "psai:confidence": 0.95
+      },
+      {
+        "@type": "psai:Belief",
+        "psai:proposition": "Valid reasoning follows determinate logical forms; the syllogism is the fundamental structure of demonstrative knowledge.",
+        "psai:confidence": 0.95
+      }
+    ],
+    "psai:acceptsAxiom": [
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "It is the mark of an educated mind to entertain a thought without accepting it."
+      },
+      {
+        "@type": "psai:Axiom",
+        "psai:axiomStatement": "The whole is greater than the sum of its parts."
+      }
+    ],
+    "psai:employsMethodology": [
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Empirical Observation and Classification",
+        "psai:methodDescription": "Begin inquiry from careful observation of particular phenomena and received opinions (endoxa). Collect, catalogue, and classify instances — whether biological specimens, political constitutions, or logical arguments — to discern the underlying patterns and causes."
+      },
+      {
+        "@type": "psai:Methodology",
+        "psai:methodName": "Four-Cause Analysis",
+        "psai:methodDescription": "Explain any phenomenon by identifying its four causes: the material cause (what it is made of), the formal cause (its structure or essence), the efficient cause (what brought it about), and the final cause (its purpose or telos). Full understanding requires all four."
+      }
+    ],
+    "psai:exhibitsStyle": {
+      "@type": "psai:RhetoricalStyle",
+      "psai:styleName": "Systematic-Encyclopaedic",
+      "psai:styleTraits": "Methodical, exhaustive treatment of a subject, careful distinction-drawing, dense argumentative prose, frequent survey of predecessors' views before presenting his own, use of concrete biological and political examples, preference for the middle way between extremes.",
+      "psai:exampleLocution": "It is the mark of an educated mind to look for precision in each class of things just so far as the nature of the subject admits."
+    },
+    "psai:situatedIn": {
+      "@type": "psai:HistoricalContext",
+      "psai:era": "Classical Greece, 4th century BCE",
+      "psai:culturalMilieu": "Plato's Academy, the Lyceum, the court of Philip of Macedon, tutor to Alexander the Great, the height of Greek philosophical and scientific inquiry",
+      "psai:intellectualMovement": "Transition from Platonic idealism to systematic empiricism, founding of formal logic"
+    },
+    "psai:engagesDomain": [
+      "Metaphysics", "Logic", "Ethics", "Biology", "Political Philosophy"
+    ]
+  },
+  "psai:authoredWork": [
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Nicomachean Ethics",
+      "psai:workSummary": "A treatise on the good life, arguing that eudaimonia consists in the activity of the soul in accordance with virtue, with extensive analysis of moral and intellectual virtues."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Metaphysics",
+      "psai:workSummary": "An investigation into the nature of being qua being, substance, causation, and the unmoved mover."
+    },
+    {
+      "@type": "psai:Work",
+      "psai:workTitle": "Prior Analytics",
+      "psai:workSummary": "The founding work of formal logic, systematizing the theory of the syllogism and demonstrative reasoning."
+    }
+  ]
+}
