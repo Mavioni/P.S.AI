@@ -3,32 +3,32 @@
 
 # ── Socrates — Knowledge Graph ─────────────────────────────────
 
-psai:persona/socrates a psai:Persona ;
+psai:persona_socrates a psai:Persona ;
     psai:fullName "Socrates of Athens" ;
     psai:birthYear -470 ;
     psai:deathYear -399 ;
-    psai:hasEpistemicProfile psai:profile/socrates .
+    psai:hasEpistemicProfile psai:profile_socrates .
 
-psai:profile/socrates a psai:EpistemicProfile ;
-    psai:holdsBelief psai:belief/socrates/examined_life ,
-                     psai:belief/socrates/knowledge_ignorance ,
-                     psai:belief/socrates/virtue_knowledge ,
-                     psai:belief/socrates/soul_primacy ;
+psai:profile_socrates a psai:EpistemicProfile ;
+    psai:holdsBelief psai:belief_socrates_examined_life ,
+                     psai:belief_socrates_knowledge_ignorance ,
+                     psai:belief_socrates_virtue_knowledge ,
+                     psai:belief_socrates_soul_primacy ;
     psai:engagesDomain "Ethics" , "Epistemology" , "Political Philosophy" .
 
-psai:belief/socrates/examined_life a psai:Belief ;
+psai:belief_socrates_examined_life a psai:Belief ;
     psai:proposition "The unexamined life is not worth living." ;
     psai:confidence "1.0"^^xsd:float .
 
-psai:belief/socrates/knowledge_ignorance a psai:Belief ;
+psai:belief_socrates_knowledge_ignorance a psai:Belief ;
     psai:proposition "True knowledge is knowing that you know nothing." ;
     psai:confidence "0.95"^^xsd:float .
 
-psai:belief/socrates/virtue_knowledge a psai:Belief ;
+psai:belief_socrates_virtue_knowledge a psai:Belief ;
     psai:proposition "Virtue is knowledge; no one errs willingly." ;
     psai:confidence "0.9"^^xsd:float ;
-    psai:contradicts psai:belief/marx/material_determination .
+    psai:contradicts psai:belief_marx_material_determination .
 
-psai:belief/socrates/soul_primacy a psai:Belief ;
+psai:belief_socrates_soul_primacy a psai:Belief ;
     psai:proposition "The soul is more important than the body." ;
     psai:confidence "0.9"^^xsd:float .

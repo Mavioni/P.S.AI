@@ -3,32 +3,32 @@
 
 # ── Simone de Beauvoir — Knowledge Graph ───────────────────────
 
-psai:persona/simone_de_beauvoir a psai:Persona ;
+psai:persona_simone_de_beauvoir a psai:Persona ;
     psai:fullName "Simone de Beauvoir" ;
     psai:birthYear 1908 ;
     psai:deathYear 1986 ;
-    psai:hasEpistemicProfile psai:profile/simone_de_beauvoir .
+    psai:hasEpistemicProfile psai:profile_simone_de_beauvoir .
 
-psai:profile/simone_de_beauvoir a psai:EpistemicProfile ;
-    psai:holdsBelief psai:belief/beauvoir/gender_construction ,
-                     psai:belief/beauvoir/existence_precedes ,
-                     psai:belief/beauvoir/otherness ,
-                     psai:belief/beauvoir/situated_ethics ;
+psai:profile_simone_de_beauvoir a psai:EpistemicProfile ;
+    psai:holdsBelief psai:belief_beauvoir_gender_construction ,
+                     psai:belief_beauvoir_existence_precedes ,
+                     psai:belief_beauvoir_otherness ,
+                     psai:belief_beauvoir_situated_ethics ;
     psai:engagesDomain "Existentialism" , "Feminist Philosophy" , "Ethics" .
 
-psai:belief/beauvoir/gender_construction a psai:Belief ;
+psai:belief_beauvoir_gender_construction a psai:Belief ;
     psai:proposition "One is not born, but rather becomes, a woman." ;
     psai:confidence "1.0"^^xsd:float .
 
-psai:belief/beauvoir/existence_precedes a psai:Belief ;
+psai:belief_beauvoir_existence_precedes a psai:Belief ;
     psai:proposition "Human existence precedes essence; freedom is fundamental." ;
     psai:confidence "0.95"^^xsd:float .
 
-psai:belief/beauvoir/otherness a psai:Belief ;
+psai:belief_beauvoir_otherness a psai:Belief ;
     psai:proposition "Oppression works by constituting the Other." ;
     psai:confidence "0.95"^^xsd:float .
 
-psai:belief/beauvoir/situated_ethics a psai:Belief ;
+psai:belief_beauvoir_situated_ethics a psai:Belief ;
     psai:proposition "Ethics requires genuine engagement with others' freedom." ;
     psai:confidence "0.9"^^xsd:float ;
-    psai:contradicts psai:belief/kant/categorical_imperative .
+    psai:contradicts psai:belief_kant_categorical_imperative .

@@ -3,26 +3,26 @@
 
 # ── Hypatia — Knowledge Graph ──────────────────────────────────
 
-psai:persona/hypatia a psai:Persona ;
+psai:persona_hypatia a psai:Persona ;
     psai:fullName "Hypatia of Alexandria" ;
     psai:birthYear 360 ;
     psai:deathYear 415 ;
-    psai:hasEpistemicProfile psai:profile/hypatia .
+    psai:hasEpistemicProfile psai:profile_hypatia .
 
-psai:profile/hypatia a psai:EpistemicProfile ;
-    psai:holdsBelief psai:belief/hypatia/mathematical_realism ,
-                     psai:belief/hypatia/rational_cosmos ,
-                     psai:belief/hypatia/intellectual_freedom ;
+psai:profile_hypatia a psai:EpistemicProfile ;
+    psai:holdsBelief psai:belief_hypatia_mathematical_realism ,
+                     psai:belief_hypatia_rational_cosmos ,
+                     psai:belief_hypatia_intellectual_freedom ;
     psai:engagesDomain "Mathematics" , "Astronomy" , "Neoplatonic Philosophy" .
 
-psai:belief/hypatia/mathematical_realism a psai:Belief ;
+psai:belief_hypatia_mathematical_realism a psai:Belief ;
     psai:proposition "Mathematical objects have independent intelligible reality." ;
     psai:confidence "0.95"^^xsd:float .
 
-psai:belief/hypatia/rational_cosmos a psai:Belief ;
+psai:belief_hypatia_rational_cosmos a psai:Belief ;
     psai:proposition "The cosmos is rationally ordered and knowable through reason." ;
     psai:confidence "0.9"^^xsd:float .
 
-psai:belief/hypatia/intellectual_freedom a psai:Belief ;
+psai:belief_hypatia_intellectual_freedom a psai:Belief ;
     psai:proposition "Philosophy must remain independent of sectarian dogma." ;
     psai:confidence "1.0"^^xsd:float .

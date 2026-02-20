@@ -32,7 +32,10 @@ class KnowledgeGraphManager:
     def load_persona_graph(self, ttl_path: Path) -> None:
         """Load a persona's knowledge graph TTL file."""
         if ttl_path.exists():
-            self._graph.parse(str(ttl_path), format="turtle")
+            try:
+                self._graph.parse(str(ttl_path), format="turtle")
+            except Exception as exc:
+                print(f"[P.S.AI] WARNING: Failed to parse {ttl_path.name}: {exc}")
 
     def load_all(self, ontology_root: Path) -> None:
         """Load schema and all persona knowledge graphs."""
@@ -105,7 +108,7 @@ class KnowledgeGraphManager:
 
         persona_domains: dict[str, set[str]] = {}
         for row in self._graph.query(query, initNs={"psai": PSAI}):
-            pid = str(row.persona).split("/")[-1]
+            pid = str(row.persona).split("#")[-1].removeprefix("persona_")
             domain = str(row.domain).lower()
             persona_domains.setdefault(pid, set()).add(domain)
 
@@ -130,7 +133,7 @@ class KnowledgeGraphManager:
         query = "SELECT DISTINCT ?persona WHERE { ?persona a psai:Persona }"
         persona_ids = []
         for row in self._graph.query(query, initNs={"psai": PSAI}):
-            pid = str(row.persona).split("/")[-1]
+            pid = str(row.persona).split("#")[-1].removeprefix("persona_")
             persona_ids.append(pid)
 
         matrix: dict[tuple[str, str], float] = {}

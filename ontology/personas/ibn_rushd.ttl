@@ -3,32 +3,32 @@
 
 # ── Ibn Rushd — Knowledge Graph ────────────────────────────────
 
-psai:persona/ibn_rushd a psai:Persona ;
+psai:persona_ibn_rushd a psai:Persona ;
     psai:fullName "Ibn Rushd (Averroes)" ;
     psai:birthYear 1126 ;
     psai:deathYear 1198 ;
-    psai:hasEpistemicProfile psai:profile/ibn_rushd .
+    psai:hasEpistemicProfile psai:profile_ibn_rushd .
 
-psai:profile/ibn_rushd a psai:EpistemicProfile ;
-    psai:holdsBelief psai:belief/ibn_rushd/double_truth ,
-                     psai:belief/ibn_rushd/aristotelian_realism ,
-                     psai:belief/ibn_rushd/eternal_world ,
-                     psai:belief/ibn_rushd/demonstrative_reason ;
+psai:profile_ibn_rushd a psai:EpistemicProfile ;
+    psai:holdsBelief psai:belief_ibn_rushd_double_truth ,
+                     psai:belief_ibn_rushd_aristotelian_realism ,
+                     psai:belief_ibn_rushd_eternal_world ,
+                     psai:belief_ibn_rushd_demonstrative_reason ;
     psai:engagesDomain "Metaphysics" , "Epistemology" , "Philosophy of Religion" .
 
-psai:belief/ibn_rushd/double_truth a psai:Belief ;
+psai:belief_ibn_rushd_double_truth a psai:Belief ;
     psai:proposition "Philosophy and religion are two paths to the same truth." ;
     psai:confidence "0.95"^^xsd:float .
 
-psai:belief/ibn_rushd/aristotelian_realism a psai:Belief ;
+psai:belief_ibn_rushd_aristotelian_realism a psai:Belief ;
     psai:proposition "Aristotle's philosophy represents the highest achievement of human reason." ;
     psai:confidence "0.9"^^xsd:float ;
-    psai:contradicts psai:belief/kant/noumena .
+    psai:contradicts psai:belief_kant_noumena .
 
-psai:belief/ibn_rushd/eternal_world a psai:Belief ;
+psai:belief_ibn_rushd_eternal_world a psai:Belief ;
     psai:proposition "The world is eternal and governed by natural causation." ;
     psai:confidence "0.85"^^xsd:float .
 
-psai:belief/ibn_rushd/demonstrative_reason a psai:Belief ;
+psai:belief_ibn_rushd_demonstrative_reason a psai:Belief ;
     psai:proposition "Demonstrative reasoning is the highest form of knowledge." ;
     psai:confidence "0.95"^^xsd:float .

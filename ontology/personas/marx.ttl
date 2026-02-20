@@ -3,33 +3,33 @@
 
 # ── Marx — Knowledge Graph ─────────────────────────────────────
 
-psai:persona/marx a psai:Persona ;
+psai:persona_marx a psai:Persona ;
     psai:fullName "Karl Marx" ;
     psai:birthYear 1818 ;
     psai:deathYear 1883 ;
-    psai:hasEpistemicProfile psai:profile/marx .
+    psai:hasEpistemicProfile psai:profile_marx .
 
-psai:profile/marx a psai:EpistemicProfile ;
-    psai:holdsBelief psai:belief/marx/class_struggle ,
-                     psai:belief/marx/material_determination ,
-                     psai:belief/marx/capitalism_contradictions ,
-                     psai:belief/marx/labour_value ;
+psai:profile_marx a psai:EpistemicProfile ;
+    psai:holdsBelief psai:belief_marx_class_struggle ,
+                     psai:belief_marx_material_determination ,
+                     psai:belief_marx_capitalism_contradictions ,
+                     psai:belief_marx_labour_value ;
     psai:engagesDomain "Political Economy" , "Philosophy of History" , "Sociology" .
 
-psai:belief/marx/class_struggle a psai:Belief ;
+psai:belief_marx_class_struggle a psai:Belief ;
     psai:proposition "The history of all hitherto existing society is the history of class struggles." ;
     psai:confidence "1.0"^^xsd:float .
 
-psai:belief/marx/material_determination a psai:Belief ;
+psai:belief_marx_material_determination a psai:Belief ;
     psai:proposition "The economic base determines the ideological superstructure." ;
     psai:confidence "0.95"^^xsd:float ;
-    psai:contradicts psai:belief/kant/categorical_imperative ,
-                     psai:belief/socrates/virtue_knowledge .
+    psai:contradicts psai:belief_kant_categorical_imperative ,
+                     psai:belief_socrates_virtue_knowledge .
 
-psai:belief/marx/capitalism_contradictions a psai:Belief ;
+psai:belief_marx_capitalism_contradictions a psai:Belief ;
     psai:proposition "Capitalism contains internal contradictions leading to its dissolution." ;
     psai:confidence "0.9"^^xsd:float .
 
-psai:belief/marx/labour_value a psai:Belief ;
+psai:belief_marx_labour_value a psai:Belief ;
     psai:proposition "Labour is the source of all value; capital extracts surplus value." ;
     psai:confidence "0.95"^^xsd:float .
