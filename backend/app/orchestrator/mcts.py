@@ -65,12 +65,14 @@ class ItachiOrchestrator:
         n_simulations: int = 100,
         max_depth: int = 10,
         exploration_constant: float = 1.414,
+        discount_factor: float = 0.7,
         domain_scores: dict[str, float] | None = None,
         friction_matrix: dict[tuple[str, str], float] | None = None,
     ) -> None:
         self._n_simulations = n_simulations
         self._max_depth = max_depth
         self._exploration_constant = exploration_constant
+        self._discount_factor = discount_factor
         self._domain_scores = domain_scores or {}
         self._friction_matrix = friction_matrix or {}
 
@@ -128,34 +130,43 @@ class ItachiOrchestrator:
             state=new_state,
             persona_id=action,
             parent=node,
-            untried_actions=list(new_state.available_speakers()),
         )
         node.children.append(child)
         return child
 
     def _simulate(self, node: MCTSNode) -> float:
-        """Run a random playout from the node to terminal depth, accumulating reward."""
-        state = node.state
-        total_reward = 0.0
+        """Evaluate the node by computing the immediate action reward plus a
+        short discounted lookahead.
 
-        while state.turn_number < self._max_depth:
-            available = state.available_speakers()
-            if not available:
-                break
+        The discount factor (gamma) ensures the immediate speaker choice
+        dominates the evaluation.
+        """
+        gamma = self._discount_factor
 
-            # Random rollout policy
+        # Compute the immediate reward for the action that created this node
+        if node.persona_id and node.parent:
+            immediate = compute_reward(
+                node.parent.state,
+                node.persona_id,
+                domain_scores=self._domain_scores,
+                friction_matrix=self._friction_matrix,
+            )
+        else:
+            immediate = 0.0
+
+        # Short lookahead: one random follow-up step to break ties
+        lookahead = 0.0
+        available = node.state.available_speakers()
+        if available and node.state.turn_number < self._max_depth:
             chosen = random.choice(available)
-            total_reward += compute_reward(
-                state,
+            lookahead = compute_reward(
+                node.state,
                 chosen,
                 domain_scores=self._domain_scores,
                 friction_matrix=self._friction_matrix,
             )
-            state = state.with_utterance(chosen, "[simulated]")
 
-        # Normalize by number of simulated turns
-        turns_simulated = state.turn_number - node.state.turn_number
-        return total_reward / max(turns_simulated, 1)
+        return immediate + gamma * lookahead
 
     def _backpropagate(self, node: MCTSNode, reward: float) -> None:
         """Propagate the simulation result up the tree."""
